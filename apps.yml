@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prueba
+  namespace: argocd
+spec:
+  source:
+    path: apps
+    repoURL: https://github.com/Mariela2020/ProyectosQA.git
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: prueba
+  project: default
